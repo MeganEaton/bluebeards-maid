@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://fww3uit3wmbp"]
+
+[ext_resource type="Script" path="res://Scripts/player_script.gd" id="2_8f7gq"]
+[ext_resource type="PackedScene" uid="uid://bs7meuvllxdwe" path="res://Scenes/player.tscn" id="2_chjdy"]
+[ext_resource type="PackedScene" uid="uid://cl24mwf5y3jy5" path="res://Scenes/castle_models_selected.tscn" id="4_neb72"]
+[ext_resource type="PackedScene" uid="uid://by63u2lgp88ee" path="res://Scenes/wife.tscn" id="5_irelk"]
+[ext_resource type="PackedScene" uid="uid://eo3vkbho16gq" path="res://Scenes/bluebeard.tscn" id="5_wha8o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpfvh"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tvqwf"]
+sky_material = SubResource("ProceduralSkyMaterial_tpfvh")
+
+[sub_resource type="Environment" id="Environment_6cp5m"]
+background_mode = 2
+sky = SubResource("Sky_tvqwf")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0lxhw"]
+radius = 0.598406
+height = 1.98594
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 124.947, 36.0307)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6cp5m")
+
+[node name="PlayerCharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4047, 1.39108, -0.0237045)
+collision_layer = 3
+collision_mask = 3
+floor_max_angle = 0.872665
+script = ExtResource("2_8f7gq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960993, 0.0789857)
+shape = SubResource("CapsuleShape3D_0lxhw")
+
+[node name="Player" parent="PlayerCharacterBody3D" instance=ExtResource("2_chjdy")]
+
+[node name="Camera3D" type="Camera3D" parent="PlayerCharacterBody3D"]
+transform = Transform3D(-4.37114e-08, -0.107999, 0.994151, 3.46747e-16, 0.994151, 0.107999, -1, 4.7208e-09, -4.34557e-08, 30, 2, 2.08165e-12)
+current = true
+fov = 15.0
+
+[node name="CastleModelsSelected2" parent="." instance=ExtResource("4_neb72")]
+
+[node name="WifeModel" parent="." instance=ExtResource("5_irelk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4289, 1.65058, -20.7921)
+
+[node name="BluebeardModel" parent="." instance=ExtResource("5_wha8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8168, 1.73385, -26.4356)
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]

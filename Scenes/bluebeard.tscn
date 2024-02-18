@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://eo3vkbho16gq"]
+
+[ext_resource type="PackedScene" uid="uid://d26af3l6m1n4q" path="res://Models/BluebeardModel.glb" id="1_2fn6c"]
+[ext_resource type="Texture2D" uid="uid://dln2sufxmq2ik" path="res://Textures/Eyes.002_Bake1_PBR_Diffuse.png" id="2_b10rj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4owni"]
+albedo_texture = ExtResource("2_b10rj")
+metallic_specular = 0.38
+roughness = 0.4
+
+[node name="BluebeardModel" instance=ExtResource("1_2fn6c")]
+
+[node name="Body_002" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.38929)
+
+[node name="Armature_003" parent="." index="1"]
+transform = Transform3D(0.457429, 0, 0, 0, 0.457429, 0, 0, 0, 0.457429, -0.0391534, 0.754, 0.0334311)
+
+[node name="Eyes_002" parent="Armature_003/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4owni")

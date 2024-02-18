@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bftdci775ymlw"]
+
+[ext_resource type="PackedScene" uid="uid://cmb57aqe0tuyn" path="res://Models/WifeModel.glb" id="1_8toin"]
+[ext_resource type="Texture2D" uid="uid://c1cjolaqfh6p4" path="res://Textures/Eyes.001_Bake1_PBR_Diffuse.png" id="2_brorv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmv0n"]
+albedo_texture = ExtResource("2_brorv")
+metallic_specular = 0.71
+roughness = 0.43
+
+[node name="WifeModel" instance=ExtResource("1_8toin")]
+
+[node name="Body" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.07154)
+
+[node name="Eyes_001" parent="Body" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jmv0n")
+
+[node name="Armature_002" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00618975, 0.622368, 0.0872375)

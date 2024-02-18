@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bofpvmwytlkr4"]
+
+[ext_resource type="PackedScene" uid="uid://bs7meuvllxdwe" path="res://Scenes/player.tscn" id="1_l0yl8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c1es7"]
+size = Vector3(6, 0.527466, 6)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_efctr"]
+size = Vector2(6, 6)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="Area3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.230278, 0)
+shape = SubResource("BoxShape3D_c1es7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0191567)
+mesh = SubResource("PlaneMesh_efctr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0449795, 0, 0.998988, 0, 1, 0, -0.998988, 0, -0.0449795, 5.62924, 0.96595, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_l0yl8")]

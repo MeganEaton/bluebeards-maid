@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://by63u2lgp88ee"]
+
+[ext_resource type="PackedScene" uid="uid://cmb57aqe0tuyn" path="res://Models/WifeModel.glb" id="1_s335m"]
+[ext_resource type="Texture2D" uid="uid://c1cjolaqfh6p4" path="res://Textures/Eyes.001_Bake1_PBR_Diffuse.png" id="2_s4wao"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsamh"]
+albedo_texture = ExtResource("2_s4wao")
+metallic_specular = 0.7
+roughness = 0.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xltr"]
+albedo_color = Color(0.921569, 0.858824, 0.839216, 1)
+
+[node name="WifeModel" instance=ExtResource("1_s335m")]
+
+[node name="Eyes_001" parent="Body" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jsamh")
+
+[node name="Body" parent="Armature_002/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8xltr")

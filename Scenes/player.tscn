@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs7meuvllxdwe"]
+
+[ext_resource type="PackedScene" uid="uid://70ex04ovayd8" path="res://Models/Player.glb" id="1_jvs2e"]
+[ext_resource type="Texture2D" uid="uid://d4fnmb386u8aq" path="res://Textures/Eyes_Bake1_PBR_Diffuse.png" id="2_n70uy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfct2"]
+albedo_texture = ExtResource("2_n70uy")
+metallic_specular = 0.73
+roughness = 0.35
+
+[node name="Player" instance=ExtResource("1_jvs2e")]
+
+[node name="Body_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103578, 1.14414, 0.0846403)
+
+[node name="Skeleton3D" parent="Body_001/Armature_001" index="0"]
+bones/0/rotation = Quaternion(-8.41974e-09, 9.47678e-08, 0.0947054, 0.995505)
+bones/1/rotation = Quaternion(-0.710191, 0.0182027, -0.114836, 0.694341)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.435611, -0.0300919, 0.0621874, 0.89748)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.0836088, 1.21947e-07, 1.69428e-09, 0.996499)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.0143885, -2.38517e-07, -2.62825e-10, 0.999896)
+bones/5/rotation = Quaternion(-0.71825, 0.245245, 0.0904355, 0.64482)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.649519, 0.0457899, -0.294152, 0.699645)
+bones/7/rotation = Quaternion(-0.0941351, -0.00167507, 0.302874, 0.948369)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.200844, -0.192251, -0.753215, 0.596129)
+bones/9/rotation = Quaternion(-0.00948442, -0.00110742, -0.222611, 0.974861)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(0.0102248, 0.00124615, 0.124446, 0.992173)
+bones/11/rotation = Quaternion(0.710191, -0.0182061, -0.114839, 0.694341)
+bones/12/rotation = Quaternion(0.435611, 0.0300959, 0.0621853, 0.89748)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.0836086, -5.94145e-09, 2.74211e-08, 0.996499)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.0143887, 3.53759e-07, 6.30519e-10, 0.999896)
+bones/15/rotation = Quaternion(0.720231, -0.242637, 0.0886697, 0.643842)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/rotation = Quaternion(0.648421, -0.0440956, -0.291687, 0.701801)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.0941352, 0.00167493, 0.302874, 0.948369)
+bones/18/rotation = Quaternion(-0.200844, 0.192251, -0.753215, 0.596129)
+bones/18/scale = Vector3(1, 1, 1)
+
+[node name="Eyes" parent="Body_001" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yfct2")
