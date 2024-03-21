@@ -9,6 +9,7 @@ metallic_specular = 0.38
 roughness = 0.4
 
 [node name="BluebeardModel" instance=ExtResource("1_2fn6c")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="Body_002" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.38929)

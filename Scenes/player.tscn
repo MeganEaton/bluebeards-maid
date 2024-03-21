@@ -9,6 +9,7 @@ metallic_specular = 0.73
 roughness = 0.35
 
 [node name="Player" instance=ExtResource("1_jvs2e")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="Body_001" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103578, 1.14414, 0.0846403)
@@ -23,7 +24,6 @@ bones/3/rotation = Quaternion(0.0836088, 1.21947e-07, 1.69428e-09, 0.996499)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(0.0143885, -2.38517e-07, -2.62825e-10, 0.999896)
 bones/5/rotation = Quaternion(-0.71825, 0.245245, 0.0904355, 0.64482)
-bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(-0.649519, 0.0457899, -0.294152, 0.699645)
 bones/7/rotation = Quaternion(-0.0941351, -0.00167507, 0.302874, 0.948369)
 bones/7/scale = Vector3(1, 1, 1)
