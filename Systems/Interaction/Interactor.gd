@@ -4,6 +4,11 @@ class_name Interactor
 
 var controller: Node3D
 
+func _ready():
+	assert(controller != null, "Controller has not been assigned in Interactor")
+	print("Controller is assigned and its global_transform is: ", controller.global_transform)
+
+
 func interact(interactable: Interactable) -> void:
 	interactable.interacted.emit(self)
 	

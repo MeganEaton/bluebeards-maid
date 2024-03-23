@@ -4,7 +4,7 @@ extends Interactor
 
 var cached_closest: Interactable
 
-func ready() -> void:
+func _ready() -> void:
 	controller = player
 
 func _physics_process(delta: float) -> void:

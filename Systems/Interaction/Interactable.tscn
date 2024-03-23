@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Systems/Interaction/Interactable.gd" id="1_pawb3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3suvt"]
+size = Vector3(1, 1, 1.47437)
 
 [node name="Interactable" type="Area3D"]
 collision_layer = 4
