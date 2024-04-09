@@ -9,11 +9,11 @@ func close() -> void:
 	tween.tween_property(self, "rotation_degrees", Vector3.ZERO, 0.3).set_ease(Tween.EASE_OUT)
 	
 func open_inward() -> void:
-	_open_to_rotation(90)
+	_open_to_rotation(-90)
 	pass
 	
 func open_outward() -> void:
-	_open_to_rotation(-90)
+	_open_to_rotation(90)
 	pass
 	
 func open_away_from(opener_position: Vector3) -> void:

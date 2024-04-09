@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq5umdhofkkmj"]
+
+[ext_resource type="Theme" uid="uid://briajj8ibywm1" path="res://font_basic.tres" id="1_l2jv0"]
+[ext_resource type="FontFile" uid="uid://bmg6kmdogyu8v" path="res://Fonts/MedulaOne-Regular.ttf" id="2_xf7sh"]
+
+[node name="Options_Display_Button" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(280, 2.08165e-12)
+layout_mode = 2
+theme = ExtResource("1_l2jv0")
+theme_override_fonts/font = ExtResource("2_xf7sh")
+theme_override_font_sizes/font_size = 35
+text = "Base_Label"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+theme = ExtResource("1_l2jv0")

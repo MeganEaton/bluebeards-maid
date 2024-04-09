@@ -1,0 +1,257 @@
+[gd_scene load_steps=9 format=3 uid="uid://s4yt8c4gdcis"]
+
+[ext_resource type="Texture2D" uid="uid://dntp7jioyevud" path="res://Images/return.png" id="1_glhq8"]
+[ext_resource type="Script" path="res://Scenes/settings_screen.gd" id="1_smhn0"]
+[ext_resource type="Texture2D" uid="uid://tpg6o2wen28d" path="res://Images/return_select.png" id="2_0d14b"]
+[ext_resource type="FontFile" uid="uid://bmg6kmdogyu8v" path="res://Fonts/MedulaOne-Regular.ttf" id="2_pxkf0"]
+[ext_resource type="Theme" uid="uid://briajj8ibywm1" path="res://font_basic.tres" id="3_5tuj1"]
+[ext_resource type="PackedScene" uid="uid://bmgoha5hf7nlp" path="res://Scenes/window_mode_button.tscn" id="4_5ic51"]
+[ext_resource type="PackedScene" uid="uid://d266tff2a3luq" path="res://Scenes/resolution_mode_button.tscn" id="5_10svg"]
+[ext_resource type="PackedScene" uid="uid://ditmpaocg783i" path="res://Scenes/volume_slider.tscn" id="6_ali2s"]
+
+[node name="Settings Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smhn0")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AspectRatioContainer"]
+
+[node name="ContentMarginContainer" type="MarginContainer" parent="AspectRatioContainer/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/side_margin = 11
+theme_override_fonts/font = ExtResource("2_pxkf0")
+theme_override_font_sizes/font_size = 40
+
+[node name="Controls" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Movement" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 789
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Movement"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Walk"
+
+[node name="Label2" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Movement"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("3_5tuj1")
+text = "[Arrow Keys ・WASD]"
+
+[node name="Jump" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 921
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Jump"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Jump"
+
+[node name="Label2" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Jump"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "[SPACE]"
+
+[node name="Camera" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 897
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Camera"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Camera"
+
+[node name="Label3" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Camera"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("3_5tuj1")
+text = "[Mouse]"
+
+[node name="Interact" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 936
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Interact"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Interact"
+
+[node name="Label2" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Interact"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "[E]"
+
+[node name="Dialogue" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 860
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Dialogue"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Dialogue"
+
+[node name="Label2" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Dialogue"]
+layout_direction = 3
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "[Left-Click]"
+
+[node name="Pause" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 938
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Pause"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Pause"
+
+[node name="Label2" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Controls/MarginContainer/VBoxContainer/Pause"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "[ESC]"
+
+[node name="Display" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Display"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 200
+
+[node name="HScrollBar" type="ScrollContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Display/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Display/MarginContainer/HScrollBar"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Window_Mode_Button" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Display/MarginContainer/HScrollBar/VBoxContainer" instance=ExtResource("4_5ic51")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Display/MarginContainer/HScrollBar/VBoxContainer" instance=ExtResource("5_10svg")]
+layout_mode = 2
+
+[node name="Audio" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="MasterHBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 477
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterHBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Maser Volume"
+
+[node name="Volume Slider" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterHBoxContainer" instance=ExtResource("6_ali2s")]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicHBoxContainer2" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 482
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicHBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "Music Volume"
+
+[node name="Volume Slider" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicHBoxContainer2" instance=ExtResource("6_ali2s")]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFXHBoxContainer3" type="HBoxContainer" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 506
+
+[node name="Label" type="Label" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXHBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_5tuj1")
+text = "SFX Volume"
+
+[node name="Volume Slider" parent="AspectRatioContainer/CanvasLayer/ContentMarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXHBoxContainer3" instance=ExtResource("6_ali2s")]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="ReturnMarginContainer" type="MarginContainer" parent="AspectRatioContainer/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureButton" type="TextureButton" parent="AspectRatioContainer/CanvasLayer/ReturnMarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_glhq8")
+texture_pressed = ExtResource("2_0d14b")
+texture_hover = ExtResource("2_0d14b")
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="AspectRatioContainer/CanvasLayer/ReturnMarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,23 @@
+~ wife_1
+
+if chore_status == "complete":
+	Lady Odell: Good job. You still have a bit of time before nightfall. I feel unwell and will see myself to bed. No need to check on me later, take it easy tonight, you've worked hard. 
+elif chore_status == "complete":
+	Lady Odell: You're such a worrywort! I'm fine, really. Just a bit under the weather. Thanks for always looking out for me though... Now! Off you go! Enjoy yourself!
+else:
+	Lady Odell: Oh! Good morning, Ellie. 
+	Lady Odell: I'm tired at the moment, so no need to tend to me. Just finish your other chores for now.
+
+=> END
+
+~ wife_2
+Lady Odell: Talk to you later then.
+=> END
+
+
+~ chore_action
+Ellie: Looks like that's everything!
+Ellie: I should go check on Lady Odell again, it looked like some of her bruises haven't healed yet...
+set chore_status = "complete"
+
+=> END

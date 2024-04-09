@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ditmpaocg783i"]
+
+[ext_resource type="Script" path="res://Volume Slider.gd" id="1_mf0ki"]
+
+[node name="Volume Slider" type="HSlider"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_mf0ki")

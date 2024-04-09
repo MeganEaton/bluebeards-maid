@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6yd1s2flrnt7"]
+
+[ext_resource type="PackedScene" uid="uid://dpamwftbt3stv" path="res://Models/Flower_v1.glb" id="1_3bjnx"]
+[ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="2_l2pjl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_otnyl"]
+size = Vector3(0.694351, 0.291992, 0.648286)
+
+[node name="Flower_v1-1" instance=ExtResource("1_3bjnx")]
+
+[node name="Flower_v1" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0256253, 0.0233341, -0.00671726)
+
+[node name="Interactable" parent="." index="1" instance=ExtResource("2_l2pjl")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0337753, 0.111816, -0.0240018)
+shape = SubResource("BoxShape3D_otnyl")
+
+[editable path="Interactable"]

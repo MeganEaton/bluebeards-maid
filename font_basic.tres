@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://briajj8ibywm1"]
+
+[ext_resource type="FontFile" uid="uid://bmg6kmdogyu8v" path="res://Fonts/MedulaOne-Regular.ttf" id="1_ryx2e"]
+
+[resource]
+default_font = ExtResource("1_ryx2e")
+default_font_size = 35
