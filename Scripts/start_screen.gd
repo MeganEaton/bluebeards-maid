@@ -1,6 +1,9 @@
 extends Control
+@onready var animation_player = $AnimationPlayer
 
 
+func _ready():
+	animation_player.play("camera")
 
 #start
 func _on_button_start_pressed():

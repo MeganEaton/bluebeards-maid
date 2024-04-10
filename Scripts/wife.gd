@@ -22,7 +22,7 @@ func _on_interactable_focused(interactor):
 func _on_interactable_interacted(interactor):
 	if Input.is_action_just_pressed("ui_accept") and dialogue_status:
 		dialogue_status = true
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "wife_1")
+		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "wife_1")
 	pass # Replace with function body.
 
 
@@ -32,6 +32,7 @@ func _on_interactable_unfocused(interactor):
 	pass # Replace with function body.
 
 func action() -> void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	#DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	pass
 
 
