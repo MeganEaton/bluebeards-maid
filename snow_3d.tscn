@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyu4i4ofpycm0"]
+
+[ext_resource type="Texture2D" uid="uid://df2q1reknpbhn" path="res://Images/Untitled_Artwork 47.png" id="1_60uln"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_76akw"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 100)
+angle_max = 360.0
+direction = Vector3(1, -1, 2.08165e-12)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+angular_velocity_min = 30.0
+angular_velocity_max = 50.0
+linear_accel_min = 4.0
+linear_accel_max = 15.0
+scale_min = 0.5
+turbulence_enabled = true
+turbulence_noise_speed_random = 4.0
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33gpc"]
+transparency = 1
+albedo_texture = ExtResource("1_60uln")
+emission_enabled = true
+emission = Color(1, 0.85098, 0.827451, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_blgal"]
+material = SubResource("StandardMaterial3D_33gpc")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 20, 2.08165e-12)
+amount = 200
+lifetime = 5.0
+speed_scale = 1.5
+visibility_aabb = AABB(-99.337, -335.614, -204.585, 352.76, 337.593, 382.566)
+process_material = SubResource("ParticleProcessMaterial_76akw")
+draw_pass_1 = SubResource("QuadMesh_blgal")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.5626, 0)
+size = Vector3(100, 1, 100)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50.2992, 0)
+size = Vector3(100, 1, 100)

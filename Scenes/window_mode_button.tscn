@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmgoha5hf7nlp"]
 
 [ext_resource type="PackedScene" uid="uid://bq5umdhofkkmj" path="res://Scenes/options_display_button.tscn" id="1_fp8vi"]
-[ext_resource type="Script" path="res://Scenes/window_mode_button.gd" id="2_07iqb"]
+[ext_resource type="Script" path="res://Scripts/window_mode_button.gd" id="2_07iqb"]
 
 [node name="Window_Mode_Button" instance=ExtResource("1_fp8vi")]
 script = ExtResource("2_07iqb")

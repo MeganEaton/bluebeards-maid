@@ -1,5 +1,6 @@
 extends MeshInstance3D
 
+@onready var interact_text = $"../InteractText"
 
 var is_open: bool = false
 
@@ -43,3 +44,13 @@ func _on_interactable_interacted(interactor):
 		open_away_from(interactor.controller.global_transform.origin)
 
 
+
+
+func _on_interactable_focused(interactor):
+	interact_text.visible = true
+	pass # Replace with function body.
+
+
+func _on_interactable_unfocused(interactor):
+	interact_text.visible = false
+	pass # Replace with function body.

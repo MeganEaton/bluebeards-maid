@@ -12,6 +12,7 @@ const Balloon = preload("res://addons/dialogue_manager/example_balloon/example_b
 @export var dialogue_start: String = "start"
 
 
+
 func action() -> void:
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)

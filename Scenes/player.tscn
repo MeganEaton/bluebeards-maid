@@ -2086,7 +2086,7 @@ anchors_preset = 0
 [node name="Props" type="Node3D" parent="."]
 
 [node name="watering_pot" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(0.000732573, -2.04177e-19, -2.013, 1.39489e-15, 1.6, 2.5737e-19, 2, -1.11591e-15, 0.000737334, 0.0431832, 1.01355, -0.79024)
+transform = Transform3D(0.000732573, -2.04177e-19, -2.013, 1.39489e-15, 1.6, 2.5737e-19, 2, -1.11591e-15, 0.000737335, 0.0431832, 1.01355, -0.79024)
 visible = false
 mesh = SubResource("ArrayMesh_xifi7")
 skeleton = NodePath("")

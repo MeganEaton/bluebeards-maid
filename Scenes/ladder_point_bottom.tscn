@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm4088n4lf2v1"]
+
+[ext_resource type="Script" path="res://Scripts/ladder_point_bottom.gd" id="1_cc1m3"]
+[ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="2_s2e3g"]
+[ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="3_2dhum"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwba0"]
+size = Vector3(1, 0.288025, 1.17713)
+
+[node name="LadderPointBottom" type="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381725, -1.18131, 0)
+script = ExtResource("1_cc1m3")
+
+[node name="InteractText" parent="." instance=ExtResource("2_s2e3g")]
+visible = false
+
+[node name="Label" parent="InteractText/Panel" index="0"]
+text = "Ascend(E)"
+
+[node name="Interactable" parent="." instance=ExtResource("3_2dhum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.381725, 1.18131, 0)
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337093, -1.0716, 0.0248853)
+shape = SubResource("BoxShape3D_nwba0")
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
+[editable path="InteractText"]
+[editable path="Interactable"]

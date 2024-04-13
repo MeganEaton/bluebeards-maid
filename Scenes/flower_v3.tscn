@@ -1,20 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4w4ymalurr3e"]
+[gd_scene load_steps=6 format=3 uid="uid://c4w4ymalurr3e"]
 
 [ext_resource type="PackedScene" uid="uid://b0qviqpi2om36" path="res://Models/Flower_v3.glb" id="1_rwjjp"]
+[ext_resource type="Script" path="res://Scripts/flower_v3.gd" id="2_6yqyw"]
 [ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="2_xqvqk"]
+[ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="4_t1w5a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hw6ei"]
 size = Vector3(1, 0.514648, 1.47437)
 
-[node name="Flower_v3" instance=ExtResource("1_rwjjp")]
+[node name="Flower_v3" groups=["Flower"] instance=ExtResource("1_rwjjp")]
+script = ExtResource("2_6yqyw")
 
 [node name="Flower_v3" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000224829, -0.0106273, -0.0385654)
 
 [node name="Interactable" parent="." index="1" instance=ExtResource("2_xqvqk")]
+dialogue_start = ""
 
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.242676, -0.116451)
 shape = SubResource("BoxShape3D_hw6ei")
 
+[node name="InteractText" parent="." index="2" instance=ExtResource("4_t1w5a")]
+visible = false
+
+[node name="Label" parent="InteractText/Panel" index="0"]
+text = "Water (E)"
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
 [editable path="Interactable"]
+[editable path="InteractText"]

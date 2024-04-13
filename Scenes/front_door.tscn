@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://yejxgl5pfk7u"]
+[gd_scene load_steps=21 format=3 uid="uid://yejxgl5pfk7u"]
 
 [ext_resource type="Script" path="res://Scripts/Door_Front_L.gd" id="1_b07t4"]
 [ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="2_w0m3c"]
 [ext_resource type="Script" path="res://Scripts/Door_Front_R.gd" id="3_0npki"]
+[ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="4_0wofu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fx1y2"]
 resource_name = "DarkBrownWood"
@@ -358,8 +359,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7838, -5.96352, 20.4264)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5377, 6.46772, -19.6244)
 shape = SubResource("BoxShape3D_6ymnx")
 
+[node name="InteractText" parent="." instance=ExtResource("4_0wofu")]
+visible = false
+
+[node name="Label" parent="InteractText/Panel" index="0"]
+text = "Open (E)"
+
 [connection signal="interacted" from="Door_Front_L-rigid/Interactable" to="Door_Front_L-rigid" method="_on_interactable_interacted"]
+[connection signal="focused" from="Door_Front_R-rigid/Interactable" to="Door_Front_R-rigid" method="_on_interactable_focused"]
 [connection signal="interacted" from="Door_Front_R-rigid/Interactable" to="Door_Front_R-rigid" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Door_Front_R-rigid/Interactable" to="Door_Front_R-rigid" method="_on_interactable_unfocused"]
 
 [editable path="Door_Front_L-rigid/Interactable"]
 [editable path="Door_Front_R-rigid/Interactable"]
+[editable path="InteractText"]

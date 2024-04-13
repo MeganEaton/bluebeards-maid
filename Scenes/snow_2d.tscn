@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://b88kru3qybss3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fci4k"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(10, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(50, 1, 1)
+inherit_velocity_ratio = 1.0
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+gravity = Vector3(2.08165e-12, 100, 2.08165e-12)
+damping_min = 15.0
+damping_max = 20.0
+scale_min = 4.0
+scale_max = 10.0
+collision_mode = 2
+collision_use_scale = true
+sub_emitter_mode = 1
+sub_emitter_frequency = 4.0
+sub_emitter_keep_velocity = true
+
+[node name="Node2D" type="GPUParticles2D"]
+position = Vector2(545, 0)
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_fci4k")
+lifetime = 4.0
+speed_scale = 2.0
+randomness = 1.0

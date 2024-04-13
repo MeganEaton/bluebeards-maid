@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dg2yomwx4gb34"]
 
-[ext_resource type="Script" path="res://Scenes/GameController.gd" id="1_frdxv"]
+[ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_0tln2"]
 [ext_resource type="PackedScene" uid="uid://b6460wq4xhpk8" path="res://Scenes/quest_alert.tscn" id="2_hb7i4"]
 [ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="2_xmsmc"]
 [ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="3_f7ov7"]
@@ -157,7 +157,7 @@ _data = {
 }
 
 [node name="GameController" type="CanvasLayer" groups=["GameController"]]
-script = ExtResource("1_frdxv")
+script = ExtResource("1_0tln2")
 
 [node name="QuestAlert" parent="." instance=ExtResource("2_hb7i4")]
 visible = false
@@ -224,6 +224,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29395, -0.326538, 2.75522)
 shape = SubResource("BoxShape3D_pxhj1")
 
 [node name="Interactable" parent="MarginContainer/KeyPanel/SubViewport/SubViewport/Key" instance=ExtResource("2_xmsmc")]
+visible = false
 
 [node name="CollisionShape3D" parent="MarginContainer/KeyPanel/SubViewport/SubViewport/Key/Interactable" index="0"]
 shape = SubResource("BoxShape3D_hxxo4")

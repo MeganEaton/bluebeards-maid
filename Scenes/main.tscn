@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://fww3uit3wmbp"]
+[gd_scene load_steps=10 format=3 uid="uid://fww3uit3wmbp"]
 
 [ext_resource type="PackedScene" uid="uid://byxmkquagn1gs" path="res://Scenes/player_character.tscn" id="1_2qdg4"]
 [ext_resource type="PackedScene" uid="uid://cl24mwf5y3jy5" path="res://Scenes/castle_models_selected.tscn" id="4_neb72"]
 [ext_resource type="PackedScene" uid="uid://by63u2lgp88ee" path="res://Scenes/wife.tscn" id="5_irelk"]
 [ext_resource type="PackedScene" uid="uid://eo3vkbho16gq" path="res://Scenes/bluebeard.tscn" id="5_wha8o"]
+[ext_resource type="PackedScene" uid="uid://c1nkeco1qc3nm" path="res://Scenes/lamp_interact.tscn" id="6_o3cec"]
 [ext_resource type="PackedScene" uid="uid://b5lshde2v27ih" path="res://Scenes/windows_1.tscn" id="8_u5jem"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpfvh"]
@@ -20,6 +21,7 @@ tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.811765, 0.811765, 0.811765, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -31,10 +33,161 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6cp5m")
 
-[node name="PlayerCharacterBody3D" parent="." instance=ExtResource("1_2qdg4")]
-
 [node name="CastleModelsSelected2" parent="." instance=ExtResource("4_neb72")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Cube_014" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_019" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="1"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_020" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="2"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_015" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_021" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_016" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="5"]
+surface_material_override/0 = null
+
+[node name="Cube_022" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="6"]
+surface_material_override/0 = null
+
+[node name="Cube_023" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="7"]
+surface_material_override/0 = null
+
+[node name="Cube_024" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="8"]
+surface_material_override/0 = null
+
+[node name="Cube_017" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="9"]
+surface_material_override/0 = null
+
+[node name="Cube_025" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="10"]
+surface_material_override/0 = null
+
+[node name="Cube_018" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="11"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
 
 [node name="Key2" parent="CastleModelsSelected2" index="5"]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 30.1732, 2.37968, -17.6891)
@@ -48,26 +201,32 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.7814, 3.56378, -35.2
 [node name="Windows" parent="." instance=ExtResource("8_u5jem")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.7063, 6.37561, -42.1174)
 
+[node name="PlayerCharacterBody3D" parent="." instance=ExtResource("1_2qdg4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.316, 3.93906, -42.6889)
+
+[node name="Lamp" parent="." instance=ExtResource("6_o3cec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0126, 3.9923, -33.133)
+
 [editable path="CastleModelsSelected2"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v1-1"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v1-2"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v1-3"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v1-4"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v1-5"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v1-6"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-1"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-2"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-3"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-4"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-5"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-6"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-7"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-8"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v2-9"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v3-1"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v3-2"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v3-3"]
-[editable path="CastleModelsSelected2/InteractableItems/Flower_v3-4"]
-[editable path="WifeModel"]
-[editable path="WifeModel/Interactable"]
-[editable path="WifeModel/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Lamp_v2"]
+[editable path="CastleModelsSelected2/InteractableItems/Lamp_v2/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Lamp_v2/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-1"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-1/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-1/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-2"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-2/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-2/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-3"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-3/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-3/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-4"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-4/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-4/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-5"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-5/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-5/InteractText"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6/Interactable"]
+[editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6/InteractText"]
+[editable path="CastleModelsSelected2/SnowGPUParticles3D"]
