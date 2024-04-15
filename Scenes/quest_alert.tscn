@@ -1,46 +1,92 @@
-[gd_scene format=3 uid="uid://b6460wq4xhpk8"]
+[gd_scene load_steps=4 format=3 uid="uid://b6460wq4xhpk8"]
+
+[ext_resource type="Texture2D" uid="uid://dcu8025lbprkm" path="res://Images/alert.png" id="1_7lk46"]
+[ext_resource type="FontFile" uid="uid://bmg6kmdogyu8v" path="res://Fonts/MedulaOne-Regular.ttf" id="2_1xclb"]
+
+[sub_resource type="Theme" id="Theme_yx2k1"]
+default_font = ExtResource("2_1xclb")
+default_font_size = 35
 
 [node name="QuestAlert" type="Control"]
+visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 175.0
-offset_bottom = 193.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 176.0
-offset_bottom = 194.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.118827
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Label" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_7lk46")
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(250, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme = SubResource("Theme_yx2k1")
+theme_override_colors/font_color = Color(0.898039, 0.639216, 0.262745, 1)
+theme_override_colors/font_outline_color = Color(0.0980392, 0.14902, 0.490196, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Find Lady Odell!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-clip_contents = true
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-clip_contents = true
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "!"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Find Lady Odell"
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yx2k1")
+theme_override_colors/font_color = Color(0.898039, 0.639216, 0.262745, 1)
+theme_override_colors/font_outline_color = Color(0.0980392, 0.14902, 0.490196, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Escape the castle!"
+horizontal_alignment = 1
+vertical_alignment = 1

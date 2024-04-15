@@ -160,7 +160,6 @@ _data = {
 script = ExtResource("1_0tln2")
 
 [node name="QuestAlert" parent="." instance=ExtResource("2_hb7i4")]
-visible = false
 
 [node name="Label" parent="QuestAlert/Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" index="0"]
 text = "Free Lady Odell"

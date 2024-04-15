@@ -824,17 +824,17 @@ script = ExtResource("1_lg0ij")
 [node name="WifeModel" type="Node3D" parent="."]
 
 [node name="Bow" type="MeshInstance3D" parent="WifeModel"]
-transform = Transform3D(-0.114985, -0.993266, -0.014212, 0.955604, -0.114509, 0.271492, -0.271291, 0.0176364, 0.962336, -0.491317, 1.41907, 4.30726)
+transform = Transform3D(-0.114985, -0.993266, -0.014212, 0.955604, -0.114509, 0.271492, -0.271291, 0.0176364, 0.962336, -0.491317, 1.41907, 0.198025)
 mesh = SubResource("ArrayMesh_fuyxt")
 skeleton = NodePath("")
 
 [node name="Bow2" type="MeshInstance3D" parent="WifeModel"]
-transform = Transform3D(0.107557, 0.993378, 0.0404052, 0.955604, -0.114509, 0.271492, 0.274321, 0.00941064, -0.961592, -0.536539, 1.41907, 4.01798)
+transform = Transform3D(0.107557, 0.993378, 0.0404052, 0.955604, -0.114509, 0.271492, 0.274321, 0.00941064, -0.961592, -0.536539, 1.41907, -0.0912549)
 mesh = SubResource("ArrayMesh_fuyxt")
 skeleton = NodePath("")
 
 [node name="Body" type="MeshInstance3D" parent="WifeModel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0355967, 0.904737, 4.15837)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0355967, 0.904737, 0.0491352)
 mesh = SubResource("ArrayMesh_gaxb1")
 skeleton = NodePath("")
 
@@ -862,6 +862,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295704, 0.498043, 0)
 mesh = SubResource("ArrayMesh_8ejvt")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_m5adg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WifeModel/Body/head_001/Eyes_001"]
+transform = Transform3D(0.999391, 0.034882, -5.28982e-11, -0.034882, 0.999391, -3.0495e-09, -5.35067e-11, 3.04949e-09, 1, 0.281078, 0.292436, 0.212235)
+light_energy = 3.444
+light_size = 1.0
+omni_range = 0.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="WifeModel/Body/head_001/Eyes_001"]
+transform = Transform3D(0.999391, 0.034882, -5.28698e-11, -0.034882, 0.999391, -3.0495e-09, -5.35351e-11, 3.04949e-09, 1, 0.281078, 0.292436, -0.139564)
+light_energy = 3.444
+light_size = 1.0
+omni_range = 0.02
 
 [node name="Hair_002" type="MeshInstance3D" parent="WifeModel/Body/head_001"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0691811, 0.381913, -0.00673676)
@@ -919,10 +931,11 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_1y661")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.956391, 4.12472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.956391, 0.0154851)
 shape = SubResource("CapsuleShape3D_7w61d")
 
 [node name="Interactable" parent="." instance=ExtResource("3_j07mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.95628)
 dialogue_resource = ExtResource("4_k8utp")
 dialogue_start = "wife_1"
 
@@ -935,6 +948,9 @@ visible = false
 
 [node name="Label" parent="InteractText/Panel" index="0"]
 text = "Talk (E)"
+
+[node name="FrontMarker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.606207, 1.32047, 0.0557595)
 
 [connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

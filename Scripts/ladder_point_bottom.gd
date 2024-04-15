@@ -12,9 +12,6 @@ func _on_interactable_focused(interactor):
 
 
 func _on_interactable_interacted(interactor):
-	var player = get_tree().get_nodes_in_group("Player")[0]
-	if player:
-		player.play_ladder_animation("climb_ladder")
 	interact_text.visible = false
 	pass # Replace with function body.
 

@@ -1,11 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://fww3uit3wmbp"]
+[gd_scene load_steps=18 format=3 uid="uid://fww3uit3wmbp"]
 
 [ext_resource type="PackedScene" uid="uid://byxmkquagn1gs" path="res://Scenes/player_character.tscn" id="1_2qdg4"]
+[ext_resource type="Script" path="res://Scripts/day_scene.gd" id="1_am1vi"]
 [ext_resource type="PackedScene" uid="uid://cl24mwf5y3jy5" path="res://Scenes/castle_models_selected.tscn" id="4_neb72"]
 [ext_resource type="PackedScene" uid="uid://by63u2lgp88ee" path="res://Scenes/wife.tscn" id="5_irelk"]
 [ext_resource type="PackedScene" uid="uid://eo3vkbho16gq" path="res://Scenes/bluebeard.tscn" id="5_wha8o"]
 [ext_resource type="PackedScene" uid="uid://c1nkeco1qc3nm" path="res://Scenes/lamp_interact.tscn" id="6_o3cec"]
+[ext_resource type="PackedScene" uid="uid://buh1haof71d8m" path="res://Scenes/chef.tscn" id="7_lhjl3"]
+[ext_resource type="PackedScene" uid="uid://bawc1m3v2aubl" path="res://Scenes/buttler_v1.tscn" id="8_6k4i2"]
 [ext_resource type="PackedScene" uid="uid://b5lshde2v27ih" path="res://Scenes/windows_1.tscn" id="8_u5jem"]
+[ext_resource type="PackedScene" uid="uid://rp61sra7ipej" path="res://Scenes/buttler_v3.tscn" id="9_drc61"]
+[ext_resource type="PackedScene" uid="uid://dlccsqu3lnnd8" path="res://maid_v1.tscn" id="10_qjhe1"]
+[ext_resource type="PackedScene" uid="uid://csoa3xb2fdr5t" path="res://maid_v2.tscn" id="11_vmueo"]
+[ext_resource type="PackedScene" uid="uid://br708t86i2n25" path="res://Scenes/maid_v1.tscn" id="12_sa1je"]
+[ext_resource type="PackedScene" uid="uid://s4yt8c4gdcis" path="res://Scenes/settings_screen.tscn" id="13_0qkju"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpfvh"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,6 +32,7 @@ volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0.811765, 0.811765, 0.811765, 1)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_am1vi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 124.947, 36.0307)
@@ -36,164 +45,11 @@ environment = SubResource("Environment_6cp5m")
 [node name="CastleModelsSelected2" parent="." instance=ExtResource("4_neb72")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="Cube_014" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_019" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="1"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_020" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="2"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_015" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_021" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="4"]
-surface_material_override/0 = null
-
-[node name="Cube_016" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="5"]
-surface_material_override/0 = null
-
-[node name="Cube_022" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="6"]
-surface_material_override/0 = null
-
-[node name="Cube_023" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="7"]
-surface_material_override/0 = null
-
-[node name="Cube_024" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="8"]
-surface_material_override/0 = null
-
-[node name="Cube_017" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="9"]
-surface_material_override/0 = null
-
-[node name="Cube_025" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="10"]
-surface_material_override/0 = null
-
-[node name="Cube_018" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="11"]
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody" index="0"]
-surface_material_override/0 = null
-
-[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="2"]
-surface_material_override/0 = null
-
-[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="4"]
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody" index="0"]
-surface_material_override/0 = null
-
-[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="2"]
-surface_material_override/0 = null
-
-[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="4"]
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody" index="0"]
-surface_material_override/0 = null
-
-[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="2"]
-surface_material_override/0 = null
-
-[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="4"]
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody" index="0"]
-surface_material_override/0 = null
-
-[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="2"]
-surface_material_override/0 = null
-
-[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="4"]
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody" index="0"]
-surface_material_override/0 = null
-
-[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="2"]
-surface_material_override/0 = null
-
-[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="4"]
-surface_material_override/0 = null
-
-[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody" index="0"]
-surface_material_override/0 = null
-
-[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="0"]
-surface_material_override/0 = null
-surface_material_override/2 = null
-
-[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="1"]
-surface_material_override/0 = null
-
-[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="2"]
-surface_material_override/0 = null
-
-[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="3"]
-surface_material_override/0 = null
-
-[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="4"]
-surface_material_override/0 = null
-
 [node name="Key2" parent="CastleModelsSelected2" index="5"]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 30.1732, 2.37968, -17.6891)
 
 [node name="WifeModel" parent="." instance=ExtResource("5_irelk")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.3935, 3.42102, -35.1486)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.3935, 3.42102, -32.228)
 
 [node name="BluebeardModel" parent="." instance=ExtResource("5_wha8o")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.7814, 3.56378, -35.2677)
@@ -206,6 +62,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.316, 3.93906, -42.6889)
 
 [node name="Lamp" parent="." instance=ExtResource("6_o3cec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0126, 3.9923, -33.133)
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Chef" parent="NPCs" instance=ExtResource("7_lhjl3")]
+
+[node name="Buttler_v1" parent="NPCs" instance=ExtResource("8_6k4i2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.87097)
+
+[node name="Buttler_v3" parent="NPCs" instance=ExtResource("9_drc61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.04905)
+
+[node name="Maid_v1" parent="NPCs" instance=ExtResource("10_qjhe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97636)
+
+[node name="Maid_v2" parent="NPCs" instance=ExtResource("11_vmueo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.96655)
+
+[node name="Maid_v3" parent="NPCs" instance=ExtResource("12_sa1je")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.15275)
+
+[node name="Settings Screen" parent="." instance=ExtResource("13_0qkju")]
+visible = false
+top_level = true
+
+[node name="AspectRatioContainer" parent="Settings Screen" index="0"]
+visible = false
+
+[node name="CanvasLayer" parent="Settings Screen/AspectRatioContainer" index="0"]
+visible = false
+
+[node name="ReturnMarginContainer" parent="Settings Screen/AspectRatioContainer/CanvasLayer" index="2"]
+visible = false
+
+[node name="SubViewport" parent="Settings Screen/AspectRatioContainer/CanvasLayer/SubViewportContainer" index="0"]
+own_world_3d = true
+render_target_update_mode = 0
+
+[connection signal="gui_input" from="Settings Screen" to="." method="_on_settings_screen_gui_input"]
+[connection signal="pressed" from="Settings Screen/AspectRatioContainer/CanvasLayer/QuitMarginContainer2/QuitTextureButton" to="." method="_on_quit_texture_button_pressed"]
 
 [editable path="CastleModelsSelected2"]
 [editable path="CastleModelsSelected2/InteractableItems/Lamp_v2"]
@@ -230,3 +125,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0126, 3.9923, -33.133)
 [editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6/Interactable"]
 [editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6/InteractText"]
 [editable path="CastleModelsSelected2/SnowGPUParticles3D"]
+[editable path="Settings Screen"]

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ditmpaocg783i"]
+[gd_scene load_steps=4 format=3 uid="uid://ditmpaocg783i"]
 
+[ext_resource type="Texture2D" uid="uid://jram8wyyc52s" path="res://Images/flame.png" id="1_50xws"]
 [ext_resource type="Script" path="res://Volume Slider.gd" id="1_mf0ki"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tq3pb"]
+color = Color(0.854902, 0.686275, 0.494118, 1)
+thickness = 55
 
 [node name="Volume Slider" type="HSlider"]
 anchors_preset = 15
@@ -8,6 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_icons/grabber = ExtResource("1_50xws")
+theme_override_styles/slider = SubResource("StyleBoxLine_tq3pb")
 max_value = 1.0
 step = 0.001
 value = 0.5

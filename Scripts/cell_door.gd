@@ -21,5 +21,4 @@ func _on_interactable_focused(interactor):
 
 
 func _on_interactable_unfocused(interactor):
-	interact_text.visible = true
 	pass # Replace with function body.

@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbvac8cqajpki"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_5d51m"]
+[ext_resource type="Texture2D" uid="uid://dntp7jioyevud" path="res://Images/return.png" id="1_7u5ux"]
+[ext_resource type="Texture2D" uid="uid://tpg6o2wen28d" path="res://Images/return_select.png" id="2_jwcsm"]
+[ext_resource type="Theme" uid="uid://briajj8ibywm1" path="res://font_basic.tres" id="3_c3jpv"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5d51m")
+
+[node name="ReturnMarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureButton" type="TextureButton" parent="ReturnMarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_7u5ux")
+texture_pressed = ExtResource("2_jwcsm")
+texture_hover = ExtResource("2_jwcsm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer"]
+show_behind_parent = true
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ColorRect"]
+layout_mode = 2
+offset_left = -14.0
+offset_right = -4.0
+offset_bottom = 500.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Credits"
+
+[node name="HboxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Made by:"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Megan Eaton"
+
+[node name="HboxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Inspiration:"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Bluebeard, Ghost of Greywoods, Race 'Til the Top"
+
+[node name="HboxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Tutorials:"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Megan Eaton"
+
+[node name="HboxContainer4" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer4"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Dialogue Asset (Official):"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer4"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Dialogue Manager- Nathan Hoad"
+
+[node name="HboxContainer5" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer5"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Audio Sources:"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer5"]
+layout_mode = 2
+theme = ExtResource("3_c3jpv")
+text = "Dialogue Manager- Nathan Hoad"
+
+[connection signal="pressed" from="ReturnMarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]

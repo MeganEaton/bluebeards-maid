@@ -69,11 +69,6 @@ func _physics_process(delta):
 func play_interaction_animation(water_plant: String):
 	animation_player.play("water_plant")
 
-func play_ladder_animation(climb_ladder: String):
-	animation_player.play("climb_ladder")
-
-func play_ladder_animation_backwards(climb_ladder: String):
-	animation_player.play_backwards("climb_ladder")
 
 func toggle_light_visibility():
 	#inverts light visibility

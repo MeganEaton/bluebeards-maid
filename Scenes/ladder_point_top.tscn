@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8w7rt"]
 size = Vector3(1, 0.336914, 1.17371)
 
-[node name="LadderPointTop" type="Marker3D"]
+[node name="LadderPointTop" type="Marker3D" groups=["TeleportMarker"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267782, 1.22207, 0)
 script = ExtResource("1_x52gv")
 
