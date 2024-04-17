@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var key_count = $MarginContainer/KeyPanel/KeyCount
 @onready var key_display = $MarginContainer
 @onready var animation_player = $AnimationPlayer
+@onready var label = $QuestAlert/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel/Label
+@onready var label_2 = $QuestAlert/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel/Label2
 
 
 var current_key_count: int = 0
@@ -13,7 +15,7 @@ var total_key_count: int = 0
 
 
 func _ready():
-	total_key_count = get_tree().get_nodes_in_group("Key").size()
+	total_key_count = 12 #gettree().get_nodes_in_group("Key").size()
 	key_count.text = "0/" + str(total_key_count)
 	key_panel.visible = false
 	pass
@@ -23,6 +25,12 @@ func pick_key():
 	key_count.text = str(current_key_count) + "/" + str(total_key_count)
 	if current_key_count>=total_key_count:
 		quest_alert.visible = true
+		key_count.visible = true
+		
+	elif current_key_count>= 13:
+		quest_alert.visible = true
+		label.visible = false
+		label_2.visible = true
 		key_count.visible = true
 	animation_player.play("key_panel_display")
 

@@ -1,0 +1,3 @@
+CharacterBody3D
+
+pass

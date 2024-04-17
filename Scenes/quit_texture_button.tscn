@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctqrjb0l2ct7h"]
+
+[ext_resource type="Texture2D" uid="uid://chw88cymrpk6k" path="res://Images/quit_small.png" id="1_3gwdm"]
+[ext_resource type="Texture2D" uid="uid://dl6t5p21kuwe0" path="res://Images/quit_small_select.png" id="2_oa40p"]
+
+[node name="QuitTextureButton" type="TextureButton"]
+texture_normal = ExtResource("1_3gwdm")
+texture_pressed = ExtResource("2_oa40p")
+texture_hover = ExtResource("2_oa40p")

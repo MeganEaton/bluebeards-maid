@@ -1,3 +1,3 @@
 extends Node
 
-var chore_status: String = ""
+var talk_status: String = ""
