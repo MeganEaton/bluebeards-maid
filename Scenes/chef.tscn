@@ -1,5 +1,6 @@
-[gd_scene load_steps=47 format=3 uid="uid://buh1haof71d8m"]
+[gd_scene load_steps=48 format=3 uid="uid://buh1haof71d8m"]
 
+[ext_resource type="Script" path="res://Scripts/chef.gd" id="1_bl8ra"]
 [ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="1_ghhbd"]
 [ext_resource type="Texture2D" uid="uid://d4fnmb386u8aq" path="res://Textures/Eyes_Bake1_PBR_Diffuse.png" id="1_sb6su"]
 [ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="2_imdm3"]
@@ -844,13 +845,14 @@ data = PackedVector3Array(-0.0341729, -0.230535, -0.237858, 0.105636, 0.0525878,
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nxocw"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_u2uey"]
-size = Vector3(1.43848, 1, 1.47437)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rxjcn"]
+radius = 1.5
 
 [node name="Chef" type="CharacterBody3D"]
+script = ExtResource("1_bl8ra")
 
 [node name="Chef" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0423006, 0.880807, 0.119455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0423006, 0.880807, 0.00715961)
 mesh = SubResource("ArrayMesh_5luj6")
 skeleton = NodePath("")
 
@@ -1096,14 +1098,14 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_vf8q1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0532433, 1.07576, 0.129741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0532433, 1.07576, -0.0149712)
 shape = SubResource("CapsuleShape3D_nxocw")
 
 [node name="Interactable" parent="." instance=ExtResource("1_ghhbd")]
 
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219238, 0.915524, 0)
-shape = SubResource("BoxShape3D_u2uey")
+shape = SubResource("CylinderShape3D_rxjcn")
 
 [node name="InteractText" parent="." instance=ExtResource("2_imdm3")]
 visible = false
@@ -1112,6 +1114,11 @@ visible = false
 text = "Talk (E)"
 
 [node name="FrontMarker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56954, 1.39402, 0)
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
 
 [editable path="Interactable"]
 [editable path="InteractText"]

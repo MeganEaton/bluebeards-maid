@@ -1,35 +1,111 @@
-[gd_scene load_steps=18 format=3 uid="uid://fww3uit3wmbp"]
+[gd_scene load_steps=30 format=3 uid="uid://fww3uit3wmbp"]
 
 [ext_resource type="PackedScene" uid="uid://byxmkquagn1gs" path="res://Scenes/player_character.tscn" id="1_2qdg4"]
 [ext_resource type="Script" path="res://Scripts/day_scene.gd" id="1_am1vi"]
 [ext_resource type="PackedScene" uid="uid://cl24mwf5y3jy5" path="res://Scenes/castle_models_selected.tscn" id="4_neb72"]
 [ext_resource type="PackedScene" uid="uid://by63u2lgp88ee" path="res://Scenes/wife.tscn" id="5_irelk"]
 [ext_resource type="PackedScene" uid="uid://eo3vkbho16gq" path="res://Scenes/bluebeard.tscn" id="5_wha8o"]
-[ext_resource type="PackedScene" uid="uid://c1nkeco1qc3nm" path="res://Scenes/lamp_interact.tscn" id="6_o3cec"]
+[ext_resource type="Resource" uid="uid://cjksmyh08tg6g" path="res://Dialogue/main.dialogue" id="7_ixgbe"]
 [ext_resource type="PackedScene" uid="uid://buh1haof71d8m" path="res://Scenes/chef.tscn" id="7_lhjl3"]
 [ext_resource type="PackedScene" uid="uid://bawc1m3v2aubl" path="res://Scenes/buttler_v1.tscn" id="8_6k4i2"]
-[ext_resource type="PackedScene" uid="uid://b5lshde2v27ih" path="res://Scenes/windows_1.tscn" id="8_u5jem"]
 [ext_resource type="PackedScene" uid="uid://rp61sra7ipej" path="res://Scenes/buttler_v3.tscn" id="9_drc61"]
+[ext_resource type="Script" path="res://Scripts/main_buttler_v2.gd" id="9_edsu0"]
 [ext_resource type="PackedScene" uid="uid://dlccsqu3lnnd8" path="res://maid_v1.tscn" id="10_qjhe1"]
+[ext_resource type="Script" path="res://Scripts/main_buttler_v3.gd" id="11_g3fvs"]
 [ext_resource type="PackedScene" uid="uid://csoa3xb2fdr5t" path="res://maid_v2.tscn" id="11_vmueo"]
 [ext_resource type="PackedScene" uid="uid://br708t86i2n25" path="res://Scenes/maid_v1.tscn" id="12_sa1je"]
 [ext_resource type="PackedScene" uid="uid://s4yt8c4gdcis" path="res://Scenes/settings_screen.tscn" id="13_0qkju"]
+[ext_resource type="Script" path="res://Scripts/main_maid_v1.gd" id="13_pku8v"]
+[ext_resource type="Script" path="res://Scripts/main_maid_v1_2.gd" id="14_3i3ao"]
+[ext_resource type="PackedScene" uid="uid://b6460wq4xhpk8" path="res://Scenes/quest_alert.tscn" id="16_6mq5s"]
+[ext_resource type="Script" path="res://Scripts/main_maid_v2.gd" id="16_fwteo"]
+[ext_resource type="Script" path="res://Scripts/main_maid_v2_2.gd" id="17_1u67a"]
+[ext_resource type="FontFile" uid="uid://bmg6kmdogyu8v" path="res://Fonts/MedulaOne-Regular.ttf" id="17_2ql7r"]
+[ext_resource type="Script" path="res://Scripts/main_maid_v3.gd" id="19_sy2bm"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tpfvh"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_md5gp"]
+sky_top_color = Color(0.533333, 0.603922, 0.701961, 1)
+sky_horizon_color = Color(0.72549, 0.733333, 0.745098, 1)
+sky_energy_multiplier = 1.5
+ground_bottom_color = Color(0, 0.184314, 0.109804, 1)
+ground_horizon_color = Color(0.776471, 0.780392, 0.792157, 1)
 
-[sub_resource type="Sky" id="Sky_tvqwf"]
-sky_material = SubResource("ProceduralSkyMaterial_tpfvh")
+[sub_resource type="Sky" id="Sky_htwvc"]
+sky_material = SubResource("ProceduralSkyMaterial_md5gp")
 
 [sub_resource type="Environment" id="Environment_6cp5m"]
 background_mode = 2
-sky = SubResource("Sky_tvqwf")
+background_color = Color(0.94902, 0.94902, 0.94902, 1)
+sky = SubResource("Sky_htwvc")
 tonemap_mode = 2
-glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.04
-volumetric_fog_albedo = Color(0.811765, 0.811765, 0.811765, 1)
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.729412, 0.729412, 0.729412, 1)
+
+[sub_resource type="Theme" id="Theme_yx2k1"]
+default_font = ExtResource("17_2ql7r")
+default_font_size = 35
+
+[sub_resource type="Animation" id="Animation_1ewmu"]
+resource_name = "quest_alert"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuestAlert:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuestAlert:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u4fdj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuestAlert:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuestAlert:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l65ip"]
+_data = {
+"RESET": SubResource("Animation_u4fdj"),
+"quest_alert": SubResource("Animation_1ewmu")
+}
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_am1vi")
@@ -45,8 +121,185 @@ environment = SubResource("Environment_6cp5m")
 [node name="CastleModelsSelected2" parent="." instance=ExtResource("4_neb72")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="Key2" parent="CastleModelsSelected2" index="5"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 30.1732, 2.37968, -17.6891)
+[node name="Chair_v2_001" parent="CastleModelsSelected2/Building_v2/Building_v3/Desk_v2" index="1"]
+transform = Transform3D(0.985756, 0, -0.16818, 0, 1, 0, 0.16818, 0, 0.985756, 1.43409, 0.259081, -0.0343952)
+
+[node name="Couch_v1_002" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="42"]
+transform = Transform3D(0.9, 0, 0, 0, 0.72, 0, 0, 0, 0.45, -1.61809, -4.19354, 0.0650826)
+
+[node name="Couch_v1_004" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="43"]
+transform = Transform3D(-0.316555, 0, -0.421246, 0, 0.72, 0, 0.842492, 0, -0.158277, 0.465411, -4.19354, -2.15101)
+
+[node name="Couch_v1_003" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="44"]
+transform = Transform3D(0.749177, 0, -0.249366, 0, 0.72, 0, 0.498733, 0, 0.374588, -1.16165, -4.19354, -1.85279)
+
+[node name="Couch_v1_005" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="45"]
+transform = Transform3D(-0.864242, 0, -0.125584, 0, 0.72, 0, 0.251167, 0, -0.432121, 1.8377, -4.19354, -1.022)
+
+[node name="Couch_v1_006" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="46"]
+transform = Transform3D(0.0688593, 0, 0.448681, 0, 0.72, 0, -0.897362, 0, 0.0344296, 0.455434, -4.19354, 1.68751)
+
+[node name="Couch_v1_007" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="47"]
+transform = Transform3D(-0.858595, 0, 0.134921, 0, 0.72, 0, -0.269841, 0, -0.429298, 1.93462, -4.19354, 0.947067)
+
+[node name="Table_v3_002" parent="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1" index="48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158707, -3.64888, -0.359596)
+
+[node name="Desk_v1_001" parent="CastleModelsSelected2/Building_v2/Hallway_v2/Building_v1_001" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60031, -3.00433, -0.366914)
+
+[node name="Cube_014" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_019" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="1"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_020" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="2"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_015" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_021" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_016" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="5"]
+surface_material_override/0 = null
+
+[node name="Cube_022" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="6"]
+surface_material_override/0 = null
+
+[node name="Cube_023" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="7"]
+surface_material_override/0 = null
+
+[node name="Cube_024" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="8"]
+surface_material_override/0 = null
+
+[node name="Cube_017" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="9"]
+surface_material_override/0 = null
+
+[node name="Cube_025" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="10"]
+surface_material_override/0 = null
+
+[node name="Cube_018" parent="CastleModelsSelected2/Building_v2/Basement/DeadBodyParts" index="11"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose2/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose3/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose4/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose5/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
+
+[node name="Cube_012" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody" index="0"]
+surface_material_override/0 = null
+
+[node name="Cube_002" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="0"]
+surface_material_override/0 = null
+surface_material_override/2 = null
+
+[node name="Cube_008" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="1"]
+surface_material_override/0 = null
+
+[node name="Cube_009" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="2"]
+surface_material_override/0 = null
+
+[node name="Cube_010" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="3"]
+surface_material_override/0 = null
+
+[node name="Cube_011" parent="CastleModelsSelected2/Building_v2/Basement/Noose6/DeadBody/Cube_012" index="4"]
+surface_material_override/0 = null
 
 [node name="WifeModel" parent="." instance=ExtResource("5_irelk")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.3935, 3.42102, -32.228)
@@ -54,33 +307,54 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.3935, 3.42102, -32.2
 [node name="BluebeardModel" parent="." instance=ExtResource("5_wha8o")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 72.7814, 3.56378, -35.2677)
 
-[node name="Windows" parent="." instance=ExtResource("8_u5jem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.7063, 6.37561, -42.1174)
-
 [node name="PlayerCharacterBody3D" parent="." instance=ExtResource("1_2qdg4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.316, 3.93906, -42.6889)
-
-[node name="Lamp" parent="." instance=ExtResource("6_o3cec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0126, 3.9923, -33.133)
 
 [node name="NPCs" type="Node3D" parent="."]
 
 [node name="Chef" parent="NPCs" instance=ExtResource("7_lhjl3")]
+transform = Transform3D(-0.397532, 0, 0.917588, 0, 1, 0, -0.917588, 0, -0.397532, 0.713867, 9.49817, -26.6321)
+
+[node name="Interactable" parent="NPCs/Chef" index="2"]
+dialogue_resource = ExtResource("7_ixgbe")
+dialogue_start = "chef_1"
 
 [node name="Buttler_v1" parent="NPCs" instance=ExtResource("8_6k4i2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.87097)
+transform = Transform3D(0.320431, 0, -0.947272, 0, 1, 0, 0.947272, 0, 0.320431, 15.0869, 9.50413, -27.7262)
+
+[node name="Interactable" parent="NPCs/Buttler_v1" index="3"]
+dialogue_resource = ExtResource("7_ixgbe")
+dialogue_start = "buttler_1"
+
+[node name="Buttler_v2" parent="NPCs" instance=ExtResource("8_6k4i2")]
+transform = Transform3D(0.478968, 0, 0.877833, 0, 1, 0, -0.877833, 0, 0.478968, 1.88179, 23.2918, -29.9274)
+script = ExtResource("9_edsu0")
 
 [node name="Buttler_v3" parent="NPCs" instance=ExtResource("9_drc61")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.04905)
+transform = Transform3D(-0.617626, 0, -0.786472, 0, 1, 0, 0.786472, 0, -0.617626, 26.6726, 9.38861, -41.1499)
+script = ExtResource("11_g3fvs")
 
 [node name="Maid_v1" parent="NPCs" instance=ExtResource("10_qjhe1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97636)
+transform = Transform3D(-0.754377, 0, 0.656441, 0, 1, 0, -0.656441, 0, -0.754377, 4.88004, 9.58063, -8.5237)
+script = ExtResource("13_pku8v")
+
+[node name="Maid_v1_2" parent="NPCs" instance=ExtResource("10_qjhe1")]
+transform = Transform3D(-0.898549, 0, -0.438873, 0, 1, 0, 0.438873, 0, -0.898549, -0.763952, 9.61316, -74.4197)
+script = ExtResource("14_3i3ao")
 
 [node name="Maid_v2" parent="NPCs" instance=ExtResource("11_vmueo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.96655)
+transform = Transform3D(0.555802, 0, 0.831314, 0, 1, 0, -0.831314, 0, 0.555802, 2.38321, 16.3622, -74.0024)
+script = ExtResource("16_fwteo")
+
+[node name="Maid_v2_2" parent="NPCs" instance=ExtResource("11_vmueo")]
+transform = Transform3D(-0.715912, 0, -0.69819, 0, 1, 0, 0.69819, 0, -0.715912, -10.2379, 22.7731, -37.7297)
+script = ExtResource("17_1u67a")
 
 [node name="Maid_v3" parent="NPCs" instance=ExtResource("12_sa1je")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.15275)
+transform = Transform3D(0.721144, 0, -0.692785, 0, 1, 0, 0.692785, 0, 0.721144, -2.90363, 9.58362, -74.4456)
+script = ExtResource("19_sy2bm")
+dialogue_resource = null
+dialogue_start = "start"
 
 [node name="Settings Screen" parent="." instance=ExtResource("13_0qkju")]
 visible = false
@@ -99,6 +373,54 @@ visible = false
 own_world_3d = true
 render_target_update_mode = 0
 
+[node name="Camera3D" parent="Settings Screen/AspectRatioContainer/CanvasLayer/SubViewportContainer/SubViewport" index="2"]
+transform = Transform3D(-0.697126, 0.321386, 0.64088, -0.179863, 0.786914, -0.590267, -0.694022, -0.526761, -0.490772, 30.6418, 2.86384, -25.149)
+
+[node name="QuestAlert" parent="." instance=ExtResource("16_6mq5s")]
+visible = true
+
+[node name="Label" parent="QuestAlert/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel" index="0"]
+visible = false
+
+[node name="Label4" type="Label" parent="QuestAlert/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel" index="3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yx2k1")
+theme_override_colors/font_color = Color(0.898039, 0.639216, 0.262745, 1)
+theme_override_colors/font_outline_color = Color(0.0980392, 0.14902, 0.490196, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Explore the castle!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l65ip")
+}
+
+[connection signal="focused" from="NPCs/Buttler_v3/Interactable" to="NPCs/Buttler_v3" method="_on_interactable_focused"]
+[connection signal="interacted" from="NPCs/Buttler_v3/Interactable" to="NPCs/Buttler_v3" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="NPCs/Buttler_v3/Interactable" to="NPCs/Buttler_v3" method="_on_interactable_unfocused"]
+[connection signal="focused" from="NPCs/Maid_v1/Interactable" to="NPCs/Maid_v1" method="_on_interactable_focused"]
+[connection signal="interacted" from="NPCs/Maid_v1/Interactable" to="NPCs/Maid_v1" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="NPCs/Maid_v1/Interactable" to="NPCs/Maid_v1" method="_on_interactable_unfocused"]
+[connection signal="focused" from="NPCs/Maid_v1_2/Interactable" to="NPCs/Maid_v1_2" method="_on_interactable_focused"]
+[connection signal="interacted" from="NPCs/Maid_v1_2/Interactable" to="NPCs/Maid_v1_2" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="NPCs/Maid_v1_2/Interactable" to="NPCs/Maid_v1_2" method="_on_interactable_unfocused"]
+[connection signal="focused" from="NPCs/Maid_v2/Interactable" to="NPCs/Maid_v2" method="_on_interactable_focused"]
+[connection signal="interacted" from="NPCs/Maid_v2/Interactable" to="NPCs/Maid_v2" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="NPCs/Maid_v2/Interactable" to="NPCs/Maid_v2" method="_on_interactable_unfocused"]
+[connection signal="focused" from="NPCs/Maid_v2_2/Interactable" to="NPCs/Maid_v2_2" method="_on_interactable_focused"]
+[connection signal="interacted" from="NPCs/Maid_v2_2/Interactable" to="NPCs/Maid_v2_2" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="NPCs/Maid_v2_2/Interactable" to="NPCs/Maid_v2_2" method="_on_interactable_unfocused"]
+[connection signal="focused" from="NPCs/Maid_v3/Interactable" to="NPCs/Maid_v3" method="_on_interactable_focused"]
+[connection signal="interacted" from="NPCs/Maid_v3/Interactable" to="NPCs/Maid_v3" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="NPCs/Maid_v3/Interactable" to="NPCs/Maid_v3" method="_on_interactable_unfocused"]
 [connection signal="gui_input" from="Settings Screen" to="." method="_on_settings_screen_gui_input"]
 [connection signal="pressed" from="Settings Screen/AspectRatioContainer/CanvasLayer/QuitMarginContainer2/QuitTextureButton" to="." method="_on_quit_texture_button_pressed"]
 
@@ -124,5 +446,36 @@ render_target_update_mode = 0
 [editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6"]
 [editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6/Interactable"]
 [editable path="CastleModelsSelected2/InteractableItems/Flowers/Flower_v1-6/InteractText"]
+[editable path="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1/Bed_Small"]
+[editable path="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1/Bed_Small/Interactable"]
+[editable path="CastleModelsSelected2/Building_v2/Hall_Bottom_v1/Building_v1/Bed_Small/InteractText"]
 [editable path="CastleModelsSelected2/SnowGPUParticles3D"]
+[editable path="NPCs/Chef"]
+[editable path="NPCs/Chef/Interactable"]
+[editable path="NPCs/Chef/InteractText"]
+[editable path="NPCs/Buttler_v1"]
+[editable path="NPCs/Buttler_v1/InteractText"]
+[editable path="NPCs/Buttler_v1/Interactable"]
+[editable path="NPCs/Buttler_v2"]
+[editable path="NPCs/Buttler_v2/InteractText"]
+[editable path="NPCs/Buttler_v2/Interactable"]
+[editable path="NPCs/Buttler_v3"]
+[editable path="NPCs/Buttler_v3/InteractText"]
+[editable path="NPCs/Buttler_v3/Interactable"]
+[editable path="NPCs/Maid_v1"]
+[editable path="NPCs/Maid_v1/Interactable"]
+[editable path="NPCs/Maid_v1/InteractText"]
+[editable path="NPCs/Maid_v1_2"]
+[editable path="NPCs/Maid_v1_2/Interactable"]
+[editable path="NPCs/Maid_v1_2/InteractText"]
+[editable path="NPCs/Maid_v2"]
+[editable path="NPCs/Maid_v2/InteractText"]
+[editable path="NPCs/Maid_v2/Interactable"]
+[editable path="NPCs/Maid_v2_2"]
+[editable path="NPCs/Maid_v2_2/InteractText"]
+[editable path="NPCs/Maid_v2_2/Interactable"]
+[editable path="NPCs/Maid_v3"]
+[editable path="NPCs/Maid_v3/InteractText"]
+[editable path="NPCs/Maid_v3/Interactable"]
 [editable path="Settings Screen"]
+[editable path="QuestAlert"]

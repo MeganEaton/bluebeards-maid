@@ -50,7 +50,7 @@ func _on_interactable_unfocused(interactor):
 	if player:
 		player.disable_camera_movement = false
 		
-	rotation = transform.basis.get_euler()
+	#rotation = transform.basis.get_euler()
 	pass # Replace with function body.
 
 func action() -> void:

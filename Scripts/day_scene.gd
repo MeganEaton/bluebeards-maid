@@ -3,9 +3,13 @@ extends Node3D
 @onready var canvas_layer = $"Settings Screen/AspectRatioContainer/CanvasLayer"
 @onready var settings_screen = $"Settings Screen"
 @onready var aspect_ratio = $"Settings Screen/AspectRatioContainer"
+@onready var quest_alert = $QuestAlert
+@onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
 	canvas_layer.visible = false
+	var night_scene_resource = ResourceLoader.load("res://Scenes/night_scene.tscn") 
+	animation_player.play("quest_alert")
 
 
 func _on_texture_button_pressed():

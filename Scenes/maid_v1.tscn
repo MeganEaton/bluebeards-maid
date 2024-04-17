@@ -1,5 +1,7 @@
-[gd_scene load_steps=42 format=3 uid="uid://br708t86i2n25"]
+[gd_scene load_steps=45 format=3 uid="uid://br708t86i2n25"]
 
+[ext_resource type="Texture2D" uid="uid://d4fnmb386u8aq" path="res://Textures/Eyes_Bake1_PBR_Diffuse.png" id="1_haey7"]
+[ext_resource type="Script" path="res://Scripts/maid_v1.gd" id="1_oilr7"]
 [ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="1_yghyp"]
 [ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="2_8viso"]
 
@@ -285,6 +287,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yece1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wl103"]
+albedo_texture = ExtResource("1_haey7")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7yr16"]
 _surfaces = [{
@@ -778,6 +783,7 @@ data = PackedVector3Array(-0.103578, -0.625194, -0.247837, 0.0420566, -0.184626,
 size = Vector3(1.4657, 1, 1.47437)
 
 [node name="Maid_v3" type="CharacterBody3D"]
+script = ExtResource("1_oilr7")
 
 [node name="Maid_v3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103578, 1.14414, -0.00697327)
@@ -801,6 +807,19 @@ skeleton = NodePath("")
 [node name="Eyes_007" type="MeshInstance3D" parent="Maid_v3/head_007"]
 mesh = SubResource("ArrayMesh_8ji8q")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_wl103")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Maid_v3/head_007/Eyes_007"]
+transform = Transform3D(0.999391, 0.034882, -5.28982e-11, -0.034882, 0.999391, -3.0495e-09, -5.35067e-11, 3.04949e-09, 1, 0.281078, 0.292436, 0.212235)
+light_energy = 3.444
+light_size = 1.0
+omni_range = 0.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Maid_v3/head_007/Eyes_007"]
+transform = Transform3D(0.999391, 0.034882, -5.28698e-11, -0.034882, 0.999391, -3.0495e-09, -5.35351e-11, 3.04949e-09, 1, 0.281078, 0.292436, -0.139564)
+light_energy = 3.444
+light_size = 1.0
+omni_range = 0.02
 
 [node name="Hair_008" type="MeshInstance3D" parent="Maid_v3/head_007"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416661, 0.447976, 0.0277443)

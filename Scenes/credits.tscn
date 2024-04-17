@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbvac8cqajpki"]
+[gd_scene load_steps=9 format=3 uid="uid://cbvac8cqajpki"]
 
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="1_5d51m"]
 [ext_resource type="Texture2D" uid="uid://dntp7jioyevud" path="res://Images/return.png" id="1_7u5ux"]
 [ext_resource type="Texture2D" uid="uid://tpg6o2wen28d" path="res://Images/return_select.png" id="2_jwcsm"]
 [ext_resource type="Theme" uid="uid://briajj8ibywm1" path="res://font_basic.tres" id="3_c3jpv"]
+[ext_resource type="FontFile" uid="uid://bmg6kmdogyu8v" path="res://Fonts/MedulaOne-Regular.ttf" id="3_hlkno"]
+[ext_resource type="Texture2D" uid="uid://bft1jwbbnc0na" path="res://Images/Untitled_Artwork 49.png" id="5_essbu"]
+[ext_resource type="PackedScene" uid="uid://b88kru3qybss3" path="res://Scenes/snow_2d.tscn" id="6_2ofu3"]
+
+[sub_resource type="Theme" id="Theme_6jkot"]
+default_font = ExtResource("3_hlkno")
+default_font_size = 34
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -12,21 +19,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_5d51m")
-
-[node name="ReturnMarginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="TextureButton" type="TextureButton" parent="ReturnMarginContainer"]
-layout_mode = 2
-texture_normal = ExtResource("1_7u5ux")
-texture_pressed = ExtResource("2_jwcsm")
-texture_hover = ExtResource("2_jwcsm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,12 +29,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 150
 theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer"]
 show_behind_parent = true
@@ -48,15 +44,18 @@ custom_minimum_size = Vector2(600, 500)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-color = Color(0.509804, 0.509804, 0.509804, 1)
+color = Color(0.14902, 0.14902, 0.184314, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ColorRect"]
-layout_mode = 2
-offset_left = -14.0
-offset_right = -4.0
-offset_bottom = 500.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
 layout_mode = 2
@@ -65,21 +64,39 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
+theme_override_colors/font_color = Color(0.898039, 0.639216, 0.262745, 1)
+theme_override_colors/font_outline_color = Color(0.0980392, 0.14902, 0.490196, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 80
 text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Displace" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6jkot")
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 55
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HboxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 387
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
+theme_override_colors/font_color = Color(0.858824, 0.65098, 0.333333, 1)
 text = "Made by:"
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
 text = "Megan Eaton"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="HboxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -88,6 +105,7 @@ theme_override_constants/separation = 50
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer3"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
+theme_override_colors/font_color = Color(0.858824, 0.65098, 0.333333, 1)
 text = "Inspiration:"
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer3"]
@@ -97,11 +115,12 @@ text = "Bluebeard, Ghost of Greywoods, Race 'Til the Top"
 
 [node name="HboxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 380
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer2"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
+theme_override_colors/font_color = Color(0.858824, 0.65098, 0.333333, 1)
 text = "Tutorials:"
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer2"]
@@ -111,11 +130,12 @@ text = "Megan Eaton"
 
 [node name="HboxContainer4" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 90
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer4"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
+theme_override_colors/font_color = Color(0.858824, 0.65098, 0.333333, 1)
 text = "Dialogue Asset (Official):"
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer4"]
@@ -125,11 +145,12 @@ text = "Dialogue Manager- Nathan Hoad"
 
 [node name="HboxContainer5" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 170
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer5"]
 layout_mode = 2
 theme = ExtResource("3_c3jpv")
+theme_override_colors/font_color = Color(0.858824, 0.65098, 0.333333, 1)
 text = "Audio Sources:"
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HboxContainer5"]
@@ -137,4 +158,43 @@ layout_mode = 2
 theme = ExtResource("3_c3jpv")
 text = "Dialogue Manager- Nathan Hoad"
 
-[connection signal="pressed" from="ReturnMarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Node2D" parent="." instance=ExtResource("6_2ofu3")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 408.0
+offset_top = -90.0
+offset_right = 1145.0
+offset_bottom = 1924.0
+mouse_filter = 2
+texture = ExtResource("5_essbu")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 2
+offset_left = -240.0
+offset_top = -91.0
+offset_right = 497.0
+offset_bottom = 1923.0
+mouse_filter = 2
+texture = ExtResource("5_essbu")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="."]
+top_level = true
+clip_children = 2
+layout_mode = 2
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 20.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_7u5ux")
+texture_pressed = ExtResource("2_jwcsm")
+texture_hover = ExtResource("2_jwcsm")
+ignore_texture_size = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

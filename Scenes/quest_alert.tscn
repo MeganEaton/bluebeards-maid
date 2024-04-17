@@ -52,7 +52,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 60)
+custom_minimum_size = Vector2(280, 60)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 4
@@ -88,5 +88,22 @@ theme_override_colors/font_outline_color = Color(0.0980392, 0.14902, 0.490196, 1
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "Escape the castle!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yx2k1")
+theme_override_colors/font_color = Color(0.898039, 0.639216, 0.262745, 1)
+theme_override_colors/font_outline_color = Color(0.0980392, 0.14902, 0.490196, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Find the hidden keys!"
 horizontal_alignment = 1
 vertical_alignment = 1

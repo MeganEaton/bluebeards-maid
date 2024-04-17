@@ -1,6 +1,7 @@
-[gd_scene load_steps=46 format=3 uid="uid://bawc1m3v2aubl"]
+[gd_scene load_steps=47 format=3 uid="uid://bawc1m3v2aubl"]
 
 [ext_resource type="PackedScene" uid="uid://dnj3w4ybukde3" path="res://interact_text.tscn" id="1_66d7h"]
+[ext_resource type="Script" path="res://Scripts/main_buttler_v1.gd" id="1_hmid5"]
 [ext_resource type="Texture2D" uid="uid://d4fnmb386u8aq" path="res://Textures/Eyes_Bake1_PBR_Diffuse.png" id="1_l7kyy"]
 [ext_resource type="PackedScene" uid="uid://b5qhafeg08fvv" path="res://Systems/Interaction/Interactable.tscn" id="2_eob58"]
 
@@ -822,6 +823,7 @@ data = PackedVector3Array(-0.0341729, -0.230535, -0.237858, 0.105636, 0.0525878,
 size = Vector3(1.61865, 1, 1.47437)
 
 [node name="Buttler_v1" type="CharacterBody3D"]
+script = ExtResource("1_hmid5")
 
 [node name="Buttler_v1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109905, 0.880807, -0.00622272)
@@ -942,7 +944,9 @@ text = "Talk (E)"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.309326, 0.748148, 0)
 shape = SubResource("BoxShape3D_w4xwv")
 
-[node name="FrontMarker3D" type="Marker3D" parent="."]
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
 
 [editable path="InteractText"]
 [editable path="Interactable"]

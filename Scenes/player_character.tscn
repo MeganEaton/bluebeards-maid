@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://byxmkquagn1gs"]
+[gd_scene load_steps=81 format=3 uid="uid://byxmkquagn1gs"]
 
 [ext_resource type="Script" path="res://Scripts/player_script.gd" id="1_i00cc"]
 [ext_resource type="Texture2D" uid="uid://c1cjolaqfh6p4" path="res://Textures/Eyes.001_Bake1_PBR_Diffuse.png" id="2_7olh8"]
@@ -1799,6 +1799,10 @@ tracks/8/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_v8h2u"]
+resource_name = "run_audio"
+loop_mode = 1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3new"]
 _data = {
 "RESET": SubResource("Animation_y82cj"),
@@ -1808,6 +1812,7 @@ _data = {
 "player_idle": SubResource("Animation_ajeih"),
 "player_idle_light": SubResource("Animation_vrx25"),
 "player_run": SubResource("Animation_wuu6u"),
+"run_audio": SubResource("Animation_v8h2u"),
 "water_plant": SubResource("Animation_eswv8")
 }
 
@@ -2225,6 +2230,8 @@ shape = SubResource("ConcavePolygonShape3D_fuq53")
 [node name="LampLight" type="OmniLight3D" parent="Player/ModelDisplacer/Player/Body/right_arm_002/Lamp_v2"]
 transform = Transform3D(1, 5.47849e-29, -1.347e-13, -5.47849e-29, 1, -3.85469e-28, 1.347e-13, 3.85469e-28, 1, 0.00967383, 0, -0.0578672)
 light_color = Color(0.854902, 0.686275, 0.494118, 1)
+light_energy = 1.5
+light_indirect_energy = 0.5
 shadow_enabled = true
 omni_range = 2.5
 
@@ -2258,12 +2265,15 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_nhdio")
 anim_player = NodePath("../PlayerAnimationPlayer")
 parameters/conditions/left = false
-parameters/Idle_Run/blend_position = Vector2(-0.00058651, 0.00438595)
+parameters/Idle_Run/blend_position = Vector2(-0.00245398, 0.925439)
 
 [node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="Player" groups=["PlayerAnimation"]]
 libraries = {
 "": SubResource("AnimationLibrary_u3new")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player/PlayerAnimationPlayer"]
+attenuation_model = 2
 
 [node name="Keys" type="Control" parent="Player"]
 layout_mode = 3
@@ -2289,8 +2299,5 @@ player = NodePath("..")
 [node name="CollisionShape3D" parent="PlayerInteractor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550689, 0)
 shape = SubResource("BoxShape3D_qcuph")
-
-[node name="FrontMarker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10209, -0.453628)
 
 [editable path="PlayerInteractor"]

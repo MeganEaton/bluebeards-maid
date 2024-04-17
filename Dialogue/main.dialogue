@@ -25,8 +25,7 @@ Lady Odell: Have I told you about this painting?
 	Lady Odell: But he was, is, wealthy and powerful. 
 	Lady Odell: My father agreed to the marriage proposal at the request of the King, to keep Fredrick in check. 
 	Lady Odell: My father's one condition was that Fredrick would take my family's last name and my sister's one condition was that I would go with her.
-	Lady Odell: "Safety in numbers", she said. Unfortunately for me however, she killed herself two years later. I've been stuck here, alone, ever since.  
-
+	Lady Odell: "Safety in numbers", she said. Unfortunately for me however, she killed herself two years later. I've been stuck here, alone, ever since.  e
 => END
 
 ~ chore_action
@@ -39,3 +38,59 @@ set chore_status = "complete"
 Master Odell: Can't you see I'm busy?! 
 Master Odell: I have so much to do and cannot be distracted, especially by someone as insignificant as you.
 => END
+
+~ day_to_night
+Ellie: This has gone on long enough, I have to get to her before it's too late!
+=> END
+
+~ chef_1
+Head Chef: I don't have time to talk, Master Odell likes his food prepared a certain way and if I get get it wrong... well...
+Head Chef: Let's just say I don't want to be on his bad side, especially with all those sharp utensils. 
+=> END
+
+~ buttler_1
+Buttler Edward: I'll probably have to bring the Lady her meal up later.
+Buttler Edward: Ever since the last lady of the house died, Lady Odell hadly ever joins Master for dinner.
+Buttler Edward: Not that I can blame her though, it's either dead silent or she get's yelled at by the Master for one reason or another.
+=> END
+
+~ buttler_2
+Buttler Christopher: I finished most everything I had to do already...
+Buttler Christopher: Maybe I'll go sneak off and take a nap in the tower before Edward makes me do anything else.
+=> END
+
+~ buttler_3
+Buttler Jacob: Barely anyone ever comes here yet I still have to stand by the door all day.
+Buttler Jacob: It can get ptretty cold especially during winter, so if you go outside make sure to close the door behind you!
+=> END
+
+~ maid_1
+Maid Emma: I have the worst job in the house! His room needs to be absolutely perfect or else I have to stand out in the snow for punishment!
+Maid Emma: This is a secret of course, if he hears me compain that'll be the end of me for sure!
+=> END!
+
+~ maid_2
+Maid Maud: I hate cleaning this room, for whatever reason it gives me the creeps!
+Maid Maud: Every once and awhile I think I swear I can hear a ghost crying... 
+Maid Maud: Maybe it's just the wind, but still spooky nonetheless!
+=> END
+
+
+~ maid_3
+Maid Beth: There are so many rooms in this place but hardly anyone comes to visit.
+Maid Beth: I heard they used to throw parties here, but after the late Lady Odell passed, and all the strange occurances happening in town, it doesn't seem quite right to part, does it?
+Maid Beth: All those dissapearences in town... at least it's safe out here since we're in the middle of nowhere!
+=> END
+
+~ maid_4
+Maid Lucille: Shhh! Not so loud!
+Maid Lucille: I'm hiding out here until the Master is finished in the study. I saw that the floor outside there had become especially worn recently and I don't want to be blamed for it.
+Maid Lucille: It's not my fault though! I always clean propperly, I swear!
+=> END
+
+~ maid_5
+Maid Claire: Does this room smell... off to you? I clean it every day but it never smells right.
+Maid Claire: Maybe it's because of the "ghost" Maud keeps talking about! 
+Maid Claire: Either way, I never stay in this room late enough to find out. This place definitely has secrets I don't wan't to find out!
+=> END
+

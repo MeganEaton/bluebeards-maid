@@ -161,9 +161,6 @@ script = ExtResource("1_0tln2")
 
 [node name="QuestAlert" parent="." instance=ExtResource("2_hb7i4")]
 
-[node name="Label" parent="QuestAlert/Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" index="0"]
-text = "Free Lady Odell"
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true

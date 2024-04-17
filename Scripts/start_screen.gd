@@ -7,6 +7,7 @@ func _ready():
 
 #start
 func _on_button_start_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	pass # Replace with function body.
 
 #settibgs
@@ -16,6 +17,7 @@ func _on_button_settings_pressed():
 
 #credits
 func _on_button_credits_pressed():
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 	pass # Replace with function body.
 
 #quit

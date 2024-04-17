@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var camera_pivot = $Player/CameraOrigin/SpringArm3D
 @export var sensitivity = 1000
 
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -21,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var disable_camera_movement = false
 
+var can_move = true
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -37,7 +39,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
+	if Input.is_action_just_pressed("ui_jump") and is_on_floor() and can_move:
 		velocity.y = JUMP_VELOCITY
 		animation_player.play("jump")
 
