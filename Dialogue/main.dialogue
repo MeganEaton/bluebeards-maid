@@ -13,32 +13,19 @@ Lady Odell: Talk to you later then.
 => END
 
 ~ wife_3
-
-if talk_status == "complete":
-	Lady Odell: You're such a worrywort! I'm fine, really. Just a bit under the weather. Thanks for always looking out for me though... Now! Off you go! Take a stroll around the castle!
-else:
-	Lady Odell: Have I told you about this painting? 
-	- YES
-		Lady Odell: Well, humor me for a moment then. You know, my sister was previously married to Fredrick. We had heard some... not so great things about him beforehand though.
-		Lady Odell: But he was, is, wealthy and powerful. 
-		Lady Odell: My father agreed to the marriage proposal at the request of the King, to keep Fredrick in check. 
-		Lady Odell: My father's one condition was that Fredrick would take my family's last name and my sister's one condition was that I would go with her.
-		Lady Odell: "Safety in numbers", she said. Unfortunately for me however, she killed herself two years later. I've been stuck here, alone, ever since...  
-		set talk_status = "complete"
-	- NO
-		Lady Odell: Well, you might already know, but my sister was previously married to Fredrick. We had heard some... not so great things about him beforehand though.
-		Lady Odell: But he was, is, wealthy and powerful. 
-		Lady Odell: My father agreed to the marriage proposal at the request of the King, to keep Fredrick in check. 
-		Lady Odell: My father's one condition was that Fredrick would take my family's last name and my sister's one condition was that I would go with her.
-		Lady Odell: "Safety in numbers", she said. Unfortunately for me however, she killed herself two years later. I've been stuck here, alone, ever since...
-		set talk_status = "complete"
-	Lady Odell: Anyways... I'm tired at the moment, so no need to tend to me. Just finish your other chores for now and head to bed when you're done.
-=> END
-
-~ wife_4
-Lady Odell: Ellie, You came for me! I can't believe you found me! You have no idea how happy I am to see you!
-Lady Odell: Please help me get out here, I can't stay in this place anymore. I can't bring myself to think that one of these bodies is my sister...
-Lady Odell: Once we're through the castle doors, we'll be free. It's now or never!
+Lady Odell: Have I told you about this painting? 
+- YES
+	Lady Odell: Well, humor me for a moment then. You know, my sister was previously married to Fredrick. We had heard some... not so great things about him beforehand though.
+	Lady Odell: But he was, is, wealthy and powerful. 
+	Lady Odell: My father agreed to the marriage proposal at the request of the King, to keep Fredrick in check. 
+	Lady Odell: My father's one condition was that Fredrick would take my family's last name and my sister's one condition was that I would go with her.
+	Lady Odell: "Safety in numbers", she said. Unfortunately for me however, she killed herself two years later. I've been stuck here, alone, ever since.  
+- NO
+	Lady Odell: Well, you might already know, but my sister was previously married to Fredrick. We had heard some... not so great things about him beforehand though.
+	Lady Odell: But he was, is, wealthy and powerful. 
+	Lady Odell: My father agreed to the marriage proposal at the request of the King, to keep Fredrick in check. 
+	Lady Odell: My father's one condition was that Fredrick would take my family's last name and my sister's one condition was that I would go with her.
+	Lady Odell: "Safety in numbers", she said. Unfortunately for me however, she killed herself two years later. I've been stuck here, alone, ever since.  e
 => END
 
 ~ chore_action

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://3abgbu0qa0d0"]
-
-[ext_resource type="Texture2D" uid="uid://dntp7jioyevud" path="res://Images/return.png" id="1_ef06c"]
-[ext_resource type="Texture2D" uid="uid://tpg6o2wen28d" path="res://Images/return_select.png" id="2_iafy7"]
-
-[node name="TextureButton" type="TextureButton"]
-texture_normal = ExtResource("1_ef06c")
-texture_pressed = ExtResource("2_iafy7")
-texture_hover = ExtResource("2_iafy7")

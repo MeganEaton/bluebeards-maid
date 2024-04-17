@@ -38,7 +38,7 @@ func _on_interactable_focused(interactor):
 
 
 func _on_interactable_interacted(interactor):
-	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "wife_3")
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "wife_1")
 	interact_text.visible = false
 	#collision.visible = false
 	pass # Replace with function body.
