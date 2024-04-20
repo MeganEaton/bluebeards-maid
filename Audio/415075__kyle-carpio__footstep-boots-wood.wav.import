@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cjpb8jtabn2ir"
+uid="uid://b3k63l2vfte6g"
 path="res://.godot/imported/415075__kyle-carpio__footstep-boots-wood.wav-b9793f653e58cc9236ca129a1fe4c5a7.sample"
 
 [deps]
@@ -12,13 +12,13 @@ dest_files=["res://.godot/imported/415075__kyle-carpio__footstep-boots-wood.wav-
 
 [params]
 
-force/8_bit=true
-force/mono=true
-force/max_rate=true
+force/8_bit=false
+force/mono=false
+force/max_rate=false
 force/max_rate_hz=44100
-edit/trim=true
-edit/normalize=true
+edit/trim=false
+edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=1
+compress/mode=0
